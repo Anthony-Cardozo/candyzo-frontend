@@ -1,0 +1,117 @@
+.body{
+    background-color: rgb(151, 142, 129);
+}
+
+.hero-section {
+    position: relative;
+    /*background-image: url('your-image.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero-text p{
+    margin-top:10px;
+    font-size:1.5rem;
+    font-weight:lighter;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #a5533f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+.best-sellers {
+    padding: 20px;
+    text-align: center;
+}
+.best-sellers h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.product-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Default for small screens */
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+/* For screens larger than 768px */
+@media (min-width: 468px) {
+    .product-card {
+        width: 48%; /* Two cards per row */
+    }
+}
+
+/* For screens larger than 1200px */
+@media (min-width: 1200px) {
+    .product-card {
+        width: 23%; /* Four cards per row */
+    }
+}
+
+.learn-more {
+    position: relative;
+    /*background-image: url('your-second-image.jpg'); /* Replace with your second image URL */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.learn-more-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #bb7135;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }

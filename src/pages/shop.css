@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+    color: #333;
+    padding: 2rem;
+    font-weight: bold;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 468px) {
+    .product-card {
+        width: 48%; /* Two cards per row */
+    }
+}
+
+/* For screens larger than 1200px */
+@media (min-width: 1200px) {
+    .product-card {
+        width: 23%; /* Four cards per row */
+    }
+}
