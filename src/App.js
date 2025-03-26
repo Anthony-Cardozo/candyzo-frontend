@@ -7,6 +7,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Product from './pages/Product';
 import Footer from './components/Footer';
+import Checkout from "./pages/Checkout";
+import './App.css'
 
 
 export default function App() {
@@ -19,6 +21,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:productId" element={<Product />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </Router>

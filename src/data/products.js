@@ -3,7 +3,7 @@ const products = [
     id: 1,
     name: "Gushers",
     price: 9.00,
-    image: "/spicy-enchilados.png",
+    image: "/gushers.jpg",
     description: "Delicious and tangy fruit snacks with a burst of flavor!",
   },
   {
