@@ -1,0 +1,12 @@
+.bar {
+    background-color: #ede3cc;
+    border-width:0px;
+    border-bottom-width: 1px;
+    border-color: rgba(43, 43, 43, 0.1);
+    border-style: solid;
+}
+
+p {
+    text-align: center;
+    padding:.25em;
+}

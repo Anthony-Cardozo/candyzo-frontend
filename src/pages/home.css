@@ -1,10 +1,10 @@
 .body{
-    background-color: rgb(151, 142, 129);
+    background-color: #ede3cc;
 }
 
 .hero-section {
     position: relative;
-    /*background-image: url('your-image.jpg'); /* Replace with your image URL */
+    background-image: url('../../public/WatermelonHome.jpg');
     background-size: cover;
     background-position: center;
     height: 500px;
@@ -19,6 +19,10 @@
     font-weight: bold;
 }
 
+.hero-text h1{
+    color:white;
+}
+
 .hero-text p{
     margin-top:10px;
     font-size:1.5rem;
@@ -28,8 +32,8 @@
 .btn {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #a5533f;
-    color: white;
+    background-color: white;
+    color: #4f1f13;
     border: none;
     cursor: pointer;
     border-radius: 5px;

@@ -9,7 +9,7 @@ return (
         <h1>Enchilados</h1>
         <div className="product-list">
             {products.map((product) => (
-                <div className="product-card">
+                <div className="product-card" key={product.id}>
                     <ProductCard key={product.id} product={product} />
                 </div>
             ))}

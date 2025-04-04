@@ -1,27 +1,29 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import products from '../data/products'; // Import your dummy products data
+import products from '../data/products';
 import './product.css'
+import { CartContext } from '../context/CartContext';
+import { useContext } from 'react';
 
 const Product = () => {
-  const { productId } = useParams(); // Get the productId from the URL
-  const product = products.find((prod) => prod.id === parseInt(productId)); // Find the product from the list
+  const { productId } = useParams();
+  const product = products.find((prod) => prod.id === parseInt(productId)); 
+  const cart = useContext(CartContext);
+  const productQuantity = cart.getProductQuantity(product.id);
 
   if (!product) {
-    return <div>Product not found</div>; // In case the product is not found
+    return <div>Product not found</div>; 
   }
-
   return (
     <div className="product-page">
       <h1>{product.name}</h1>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
-      <button>Add to Cart</button>
+      <button onClick={() => {cart.addOneToCart(product.id); console.log(cart.items);}}>Add to Cart</button>
       
       <div className="reviews">
         <h3>Customer Reviews</h3>
-        {/* Render some dummy reviews */}
         <div className="review">
           <p>Great product! Loved it! 5/5</p>
         </div>
