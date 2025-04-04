@@ -2,6 +2,7 @@ import React from "react";
 import ProductCard from "../components/ProductCard";
 import bestSellers from "../data/bestSellers";
 import './home.css'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -10,7 +11,9 @@ export default function Home() {
             <div className="hero-text">
                 <h1>Welcome to Cardozo Enchilados</h1>
                 <p>Your favorite enchilados, made with love and care.</p>
+                <Link to="/shop">
                 <button className="btn">Shop Now!</button>
+                </Link>
             </div>
         </div>
 
@@ -19,18 +22,20 @@ export default function Home() {
             <h2>Best Sellers</h2>
             <div className="product-list">
                 {bestSellers.map((bestSeller) => (
-                    <div className="product-card" key={bestSeller.id}>
                         <ProductCard product={bestSeller} />
-                    </div>
                 ))}
             </div>
+            <Link to="/shop">
             <button className="btn">View All</button>
+            </Link>
         </div>
 
     
         <div className="learn-more">
             <div>
+                <Link to="/about">
                 <button className="learn-more-btn">Learn More</button>
+                </Link>
             </div>
         </div>
 

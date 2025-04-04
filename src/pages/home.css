@@ -60,38 +60,6 @@
     justify-content: center;
     gap: 20px;
 }
-.product-card {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* Default for small screens */
-    padding: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  }
-
-/* For screens larger than 768px */
-@media (min-width: 468px) {
-    .product-card {
-        width: 48%; /* Two cards per row */
-    }
-}
-
-/* For screens larger than 1200px */
-@media (min-width: 1200px) {
-    .product-card {
-        width: 23%; /* Four cards per row */
-    }
-}
-
 .learn-more {
     position: relative;
     /*background-image: url('your-second-image.jpg'); /* Replace with your second image URL */

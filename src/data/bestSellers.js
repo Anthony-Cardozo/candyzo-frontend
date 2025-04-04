@@ -3,7 +3,7 @@ const bestSellers = [
     id: 1,
     name: "Gushers",
     price: 9.00,
-    image: "/gushers.jpg",
+    image: "/chamoy-gummies.png",
     description: "Delicious and tangy fruit snacks with a burst of flavor!",
   },
   {
