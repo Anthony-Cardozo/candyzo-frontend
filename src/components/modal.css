@@ -1,0 +1,103 @@
+/* Basic modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    transform: translateX(100%); /* Initially off-screen */
+    transition: transform 0.3s ease-out;
+  }
+  
+  .modal.show {
+    transform: translateX(0); /* Slide in when visible */
+  }
+  
+  .modal-container {
+    overflow-y: auto;
+    max-height: calc(100% - 60px);
+    position: relative;
+  }
+  
+  .cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .item-details {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .plus,
+  .minus,
+  .remove {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .plus:hover,
+  .minus:hover,
+  .remove:hover {
+    background-color: #45a049;
+  }
+  
+  .remove {
+    background-color: #ff4d4d;
+  }
+  
+  .remove:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .empty {
+    font-size: 16px;
+    color: #777;
+  }
+  
+  /* Checkout button styling */
+  .checkout {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .checkout:hover {
+    background-color: #218838;
+  }
+  
+  /* Close button styling */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .close-btn:hover {
+    background-color: #ff1a1a;
+  }
+  
