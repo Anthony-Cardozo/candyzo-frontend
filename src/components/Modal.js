@@ -34,7 +34,7 @@ export default function Modal() {
     };
   }, []);*/
 
-  return (
+  return (/*
     <div className={`modal ${isModalVisible ? 'show' : ''}`}>
       <div className="modal-container">
         <button className="close-btn" onClick={closeModal}>X</button>
