@@ -4,6 +4,8 @@ import './navbar.css';
 import { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import Modal from "./Modal";
+//import { BsBag } from "react-icons/bs";
+
 
 export default function NavBar() {
 

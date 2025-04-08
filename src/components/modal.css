@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 400px;
+    width: 600px;
     height: 100%;
     background-color: white;
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
@@ -26,6 +26,19 @@
   .cart-item {
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .right {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    align-items: center;
+    width:45%;
   }
   
   .product-name {
@@ -41,26 +54,29 @@
   .plus,
   .minus,
   .remove {
-    background-color: #4CAF50;
+    background-color: #2a9d8f;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     margin: 5px;
+    justify-content: right;
+    border-radius: 15px;
+    font-size: 15px;
   }
   
   .plus:hover,
   .minus:hover,
   .remove:hover {
-    background-color: #45a049;
+    background-color: #21867a;
   }
   
   .remove {
-    background-color: #ff4d4d;
+    background-color: #a5533f;
   }
   
   .remove:hover {
-    background-color: #ff1a1a;
+    background-color: rgb(138, 64, 45);
   }
   
   .empty {
@@ -70,18 +86,21 @@
   
   /* Checkout button styling */
   .checkout {
-    background-color: #28a745;
+    background-color: #2a9d8f;
     color: white;
     padding: 10px 20px;
     border: none;
-    width: 100%;
+    width: 50%;
     margin-top: 20px;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 15px;
+    justify-content: center;
+    margin-left:25%;
   }
   
   .checkout:hover {
-    background-color: #218838;
+    background-color: #21867a;
   }
   
   /* Close button styling */
@@ -89,7 +108,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #ff4d4d;
+    background-color: #777;
     color: white;
     border: none;
     padding: 10px;
@@ -98,6 +117,11 @@
   }
   
   .close-btn:hover {
-    background-color: #ff1a1a;
+    background-color: #555;
   }
   
+  .in {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+  }

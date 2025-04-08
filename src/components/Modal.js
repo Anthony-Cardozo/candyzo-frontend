@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import './modal.css';
 import { CartContext } from "../context/CartContext";
 import products from "../data/products";
+import { FaTrashAlt } from "react-icons/fa";
+
 
 export default function Modal() {
   const cart = useContext(CartContext);
@@ -19,8 +21,8 @@ export default function Modal() {
   const closeModal = () => {
     setIsModalVisible(false);  
   };
-/*
-  const handleClickOutside = (e) => {
+
+  /*const handleClickOutside = (e) => {
     const modal = document.querySelector('.modal-container');
     if (modal && !modal.contains(e.target)) {
       closeModal(); 
@@ -34,9 +36,10 @@ export default function Modal() {
     };
   }, []);*/
 
-  return (/*
+  return (
     <div className={`modal ${isModalVisible ? 'show' : ''}`}>
       <div className="modal-container">
+        <h1>Shopping Cart</h1>
         <button className="close-btn" onClick={closeModal}>X</button>
         {productCount > 0 ? (
           cart.items.map((cartProduct) => {
@@ -44,15 +47,15 @@ export default function Modal() {
             const totalPrice = product.price * cartProduct.quantity;
             return (
               <div key={product.id} className="cart-item">
+                <img src={product.image} alt={product.name} width="50" />
                 <h2 className="product-name">{product.name}</h2>
-                <p className="item-details">
-                  ${product.price.toFixed(2)} x {cartProduct.quantity} = ${totalPrice.toFixed(2)}
-                </p>
-                <button className="plus" onClick={() => cart.addOneToCart(product.id)}>+</button>
-                <button className="minus" onClick={() => cart.removeOneFromCart(product.id)}>-</button>
-                <button className="remove" onClick={() => cart.deleteFromCart(product.id)}>
-                  Remove from cart
-                </button>
+                <div className="right">
+                    <button className="plus" onClick={() => cart.addOneToCart(product.id)}>+</button>
+                    <input type="number" className="in" value={cartProduct.quantity}></input>
+                    <button className="minus" onClick={() => cart.removeOneFromCart(product.id)}>-</button>
+                    <p className="item-details">${totalPrice.toFixed(0)}</p>
+                    <FaTrashAlt color="#a5533f" onClick={() => cart.removeOneFromCart(product.id)}/>
+                </div>
               </div>
             );
           })
