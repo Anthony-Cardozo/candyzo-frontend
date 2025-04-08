@@ -7,40 +7,35 @@ import { FaTrashAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
 
-export default function Modal() {
+export default function Modal({isVisible, onClose}) {
   const cart = useContext(CartContext);
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  useEffect(() => {
-    if (productCount > 0) {
-      setIsModalVisible(true);  
-    }
-  }, [productCount]);  
-
-  const closeModal = () => {
-    setIsModalVisible(false);  
-  };
-
-  /*const handleClickOutside = (e) => {
-    const modal = document.querySelector('.modal-container');
-    if (modal && !modal.contains(e.target)) {
-      closeModal(); 
+  const handleClickOutside = (e) => {
+    const modalContainer = document.querySelector('.modal-container');
+    if (modalContainer && !modalContainer.contains(e.target)) {
+      onClose(); 
     }
   };
 
   useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
+    if (isVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = 'auto';
+    }
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = 'auto';
     };
-  }, []);*/
+  }, [isVisible, onClose]);
 
   return (
-    <div className={`modal ${isModalVisible ? 'show' : ''}`}>
+    <div className={`modal ${isVisible ? 'show' : ''}`}>
       <div className="modal-container">
-        <IoMdClose color="#555" className="close-btn" onClick={closeModal} size="40px"/>
+        <IoMdClose color="#555" className="close-btn" onClick={onClose} size="40px"/>
         <h1>Shopping Cart</h1>
         {productCount > 0 ? (
           cart.items.map((cartProduct) => {
@@ -64,9 +59,11 @@ export default function Modal() {
           <p className="empty">There are no items in your cart.</p>
         )}
       </div>
+      {productCount > 0 &&(
       <Link to="/checkout">
         <button className="checkout">Checkout</button>
       </Link>
+        )}
     </div>
   );
 }

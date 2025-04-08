@@ -4,7 +4,7 @@ import bestSellers from "../data/bestSellers";
 import './home.css'
 import { Link } from 'react-router-dom';
 
-export default function Home() {
+export default function Home({isModalOpen}) {
   return (
     <div className="body">
         <div className="hero-section">
@@ -22,7 +22,7 @@ export default function Home() {
             <h2>Best Sellers</h2>
             <div className="product-list">
                 {bestSellers.map((bestSeller) => (
-                        <ProductCard product={bestSeller} />
+                        <ProductCard product={bestSeller} isModalOpen={isModalOpen}/>
                 ))}
             </div>
             <Link to="/shop">
