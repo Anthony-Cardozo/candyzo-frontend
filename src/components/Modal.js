@@ -4,6 +4,7 @@ import './modal.css';
 import { CartContext } from "../context/CartContext";
 import products from "../data/products";
 import { FaTrashAlt } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
 
 export default function Modal() {
@@ -39,8 +40,8 @@ export default function Modal() {
   return (
     <div className={`modal ${isModalVisible ? 'show' : ''}`}>
       <div className="modal-container">
+        <IoMdClose color="#555" className="close-btn" onClick={closeModal} size="40px"/>
         <h1>Shopping Cart</h1>
-        <button className="close-btn" onClick={closeModal}>X</button>
         {productCount > 0 ? (
           cart.items.map((cartProduct) => {
             const product = products.find((p) => p.id === cartProduct.id);
@@ -54,7 +55,7 @@ export default function Modal() {
                     <input type="number" className="in" value={cartProduct.quantity}></input>
                     <button className="minus" onClick={() => cart.removeOneFromCart(product.id)}>-</button>
                     <p className="item-details">${totalPrice.toFixed(0)}</p>
-                    <FaTrashAlt color="#a5533f" onClick={() => cart.removeOneFromCart(product.id)}/>
+                    <FaTrashAlt className="trash" color="#a5533f" onClick={() => cart.deleteFromCart(product.id)}/>
                 </div>
               </div>
             );
