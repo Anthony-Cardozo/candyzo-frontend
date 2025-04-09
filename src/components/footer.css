@@ -1,15 +1,18 @@
 .footer {
     background-color: #333; /* Dark background for footer */
-    color: white; /* White text */
+    color: white; 
     padding: 20px;
     text-align: center;
+    width:100%;
+    margin: 0 auto;
+    height:200px;
   }
-  
+  /*
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-  }
+  }*/
   
   .footer-logo img {
     max-height: 50px;
@@ -20,6 +23,7 @@
   .footer-links {
     list-style: none;
     padding: 0;
+    padding-bottom: 20px;
   }
   
   .footer-links li {
@@ -41,3 +45,19 @@
     font-size: 14px;
   }
   
+  .social-icons {
+    display: flex;
+    text-align: center;
+    gap:20px;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .tiktok, .insta {
+    cursor: pointer;
+  }
+
+  .social-icons a {
+    color: inherit;
+    text-decoration: none;
+  }

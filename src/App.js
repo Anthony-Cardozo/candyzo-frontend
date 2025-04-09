@@ -14,6 +14,7 @@ import Bar from "./components/Bar";
 import Modal from './components/Modal';
 import { CartContext } from "./context/CartContext";
 import { useContext, useEffect, useState } from "react";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 
@@ -64,7 +65,9 @@ export default function App() {
   return (
     <CartProvider>
       <Router>
-        <AppContent />
+        <ScrollToTop>
+          <AppContent />
+        </ScrollToTop>
       </Router>
     </CartProvider>
   );

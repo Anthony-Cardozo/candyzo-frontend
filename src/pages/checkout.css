@@ -2,6 +2,8 @@
     max-width: 900px;
     margin: auto;
     padding: 20px;
+    background-color: #ede3cc;
+    width:100%;
   }
   
   .checkout-title {

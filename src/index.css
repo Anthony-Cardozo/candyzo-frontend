@@ -4,33 +4,32 @@
 }
 
 body.modal-open .navbar-container {
-  background-color: transparent; /* Or rgba(0, 0, 0, 0) 
+  background-color: transparent;  
 }
 
-/* Make the root element transparent when the modal is open 
 body.modal-open #root {
-  background-color: transparent; /* Or rgba(0, 0, 0, 0) 
+  background-color: transparent; 
 }
 
-/* You might also need to do this for your main content area (.body in your case) 
+
 body.modal-open .body {
-  background-color: transparent; /* Or rgba(0, 0, 0, 0) 
+  background-color: transparent; 
 }
 
-/* Your existing styles for #root and .body (e.g., default background) 
 #root {
-  /* Your other styles 
-  background-color: white; /* Or your default background color 
-  /* ... other styles ... 
+  background-color: white; 
 }
 
 .body {
-  /* Your other styles 
-  background-color: white; /* Or your default background color 
-  /* ... other styles ... 
+  background-color: white;
 }*/
 
+#root {
+  background-color: #ede3cc;
+}
+
 body {
+  background-color: #ede3cc;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

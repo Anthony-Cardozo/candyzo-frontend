@@ -17,20 +17,30 @@
     max-width: 1200px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
-  .navbar-logo-link {
-    display: inline-block;
-    text-decoration: none;
+  .menu-left {
+    width: 30%;
+    text-align: left;
+  }
+
+  .cart-icon-container {
+    width:30%;
+    text-align: right;
+  }
+
+  .logo-container {
+    text-align: center; 
+    flex-grow: 1; 
   }
   
   .navbar-logo {
     font-size: 2rem;
     color: #a5533f;
     max-height: 70px; 
-    width: auto;
+    width: 200px;
   }
   
   .navbar-menu {
@@ -51,7 +61,6 @@
     color: #a5533f;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .navbar-container {
       flex-direction: column;
@@ -62,6 +71,13 @@
       flex-direction: column;
       gap: 10px;
       margin-top: 10px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
     }
+  }
+
+  .cart-icon {
+    cursor: pointer;
   }
   

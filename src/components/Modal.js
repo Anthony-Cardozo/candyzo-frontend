@@ -5,14 +5,16 @@ import { CartContext } from "../context/CartContext";
 import products from "../data/products";
 import { FaTrashAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Modal({isVisible, onClose}) {
   const cart = useContext(CartContext);
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
+  const navigate = useNavigate();
 
   const handleClickOutside = (e) => {
-    const modalContainer = document.querySelector('.modal-container');
+    const modalContainer = document.querySelector('.modal.show');
     if (modalContainer && !modalContainer.contains(e.target)) {
       onClose(); 
     }
@@ -60,9 +62,7 @@ export default function Modal({isVisible, onClose}) {
         )}
       </div>
       {productCount > 0 &&(
-      <Link to="/checkout">
-        <button className="checkout">Checkout</button>
-      </Link>
+        <button className="checkout" onClick={() => {navigate("/checkout"); onClose();}}>Checkout</button>
         )}
     </div>
   );
