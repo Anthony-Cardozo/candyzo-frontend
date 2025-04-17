@@ -1,10 +1,25 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
-import bestSellers from "../data/bestSellers";
 import './home.css'
 import { Link } from 'react-router-dom';
+import UseBestSellers from "../hooks/UseBestSellers";
 
 export default function Home({isModalOpen}) {
+    const { bestSellers, loading, error } = UseBestSellers();
+
+    if (loading) 
+        return (
+            <div className="loading-body">
+                <p>Loading featured products...</p>
+            </div>
+        );
+    if (error) 
+        return (
+            <div className="error-body">
+                <p>Error loading best sellers: {error.message}...</p>
+            </div>
+        );
+
   return (
     <div className="body">
         <div className="hero-section">

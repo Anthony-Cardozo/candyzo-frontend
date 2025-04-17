@@ -1,9 +1,8 @@
 
 import axios from 'axios';
 
-// Set up base URL for your API
 const api = axios.create({
-  baseURL: 'http://localhost:3000/', // Backend API URL
+  baseURL: 'http://localhost:3001',
 });
 
 export const getCandies = async () => {
