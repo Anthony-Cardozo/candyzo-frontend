@@ -36,9 +36,10 @@ export default function Home({isModalOpen}) {
         <div className="best-sellers">
             <h2>Best Sellers</h2>
             <div className="product-list">
-                {bestSellers.map((bestSeller) => (
+                    {bestSellers && Array.isArray(bestSellers) && bestSellers.map((bestSeller) => (
                         <ProductCard product={bestSeller} isModalOpen={isModalOpen}/>
-                ))}
+                    ))}
+                    {!bestSellers && !loading && !error && <p>No best sellers found.</p>}
             </div>
             <Link to="/shop">
             <button className="btn">View All</button>

@@ -10,7 +10,8 @@ function UseBestSellers() {
     const fetchBest = async () => {
       try {
         const response = await getCandies();///candies/best-sellers
-        setBestSellers(response.data);
+        setBestSellers(response);
+        console.log(response);
         setLoading(false);
       } catch (err) {
         setError(err);
