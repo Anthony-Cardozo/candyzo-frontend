@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './modal.css';
 import { CartContext } from "../context/CartContext";
 import products from "../data/products";
+import useProducts from "../hooks/useProducts";
 import { FaTrashAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +13,7 @@ export default function Modal({isVisible, onClose}) {
   const cart = useContext(CartContext);
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
   const navigate = useNavigate();
+  const {products, loading, error} = useProducts();
 
   const handleClickOutside = (e) => {
     const modalContainer = document.querySelector('.modal.show');
@@ -34,6 +36,19 @@ export default function Modal({isVisible, onClose}) {
     };
   }, [isVisible, onClose]);
 
+  if (loading) 
+    return (
+        <div className="loading-body">
+            <p>Loading products...</p>
+        </div>
+    );
+  if (error) 
+      return (
+          <div className="error-body">
+              <p>Error loading products: {error.message}...</p>
+          </div>
+      );
+
   return (
     <div className={`modal ${isVisible ? 'show' : ''}`}>
       <div className="modal-container">
@@ -41,18 +56,19 @@ export default function Modal({isVisible, onClose}) {
         <h1>Shopping Cart</h1>
         {productCount > 0 ? (
           cart.items.map((cartProduct) => {
-            const product = products.find((p) => p.id === cartProduct.id);
+            const product = products.find((prod) => prod._id === cartProduct.id);
             const totalPrice = product.price * cartProduct.quantity;
             return (
-              <div key={product.id} className="cart-item">
-                <img src={product.image} alt={product.name} width="50" />
+              <div key={product._id} className="cart-item">
+                {/*<img src={product.image} alt={product.name} width="50" />*/}
+                <img src="chamoy-gummies.png" alt={product.name} width="50" />
                 <h2 className="product-name">{product.name}</h2>
                 <div className="right">
-                    <button className="plus" onClick={() => cart.addOneToCart(product.id)}>+</button>
+                    <button className="plus" onClick={() => cart.addOneToCart(product._id)}>+</button>
                     <input type="number" className="in" value={cartProduct.quantity}></input>
-                    <button className="minus" onClick={() => cart.removeOneFromCart(product.id)}>-</button>
+                    <button className="minus" onClick={() => cart.removeOneFromCart(product._id)}>-</button>
                     <p className="item-details">${totalPrice.toFixed(0)}</p>
-                    <FaTrashAlt className="trash" color="#a5533f" onClick={() => cart.deleteFromCart(product.id)}/>
+                    <FaTrashAlt className="trash" color="#a5533f" onClick={() => cart.deleteFromCart(product._id)}/>
                 </div>
               </div>
             );

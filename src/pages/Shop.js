@@ -1,15 +1,31 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
-import products from "../data/products";
+import useProducts from "../hooks/useProducts";
 import './shop.css'
 
 export default function Shop({isModalOpen}) {
+
+const {products, loading, error} = useProducts();
+
+if (loading) 
+    return (
+        <div className="loading-body">
+            <p>Loading products...</p>
+        </div>
+    );
+if (error) 
+    return (
+        <div className="error-body">
+            <p>Error loading products: {error.message}...</p>
+        </div>
+    );
+
 return (
     <div className="body">
         <h1>Gummy Enchilados</h1>
         <div className="product-list">
             {products.map((product) => (
-                    <ProductCard key={product.id} product={product} isModalOpen={isModalOpen}/>
+                    <ProductCard key={product._id} product={product} isModalOpen={isModalOpen}/>
             ))}
         </div>
     </div>

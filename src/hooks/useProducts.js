@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getCandies } from '../services/api';
 
-function UseBestSellers() {
-  const [bestSellers, setBestSellers] = useState([]);
+function useProducts() {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -10,7 +10,7 @@ function UseBestSellers() {
     const fetchBest = async () => {
       try {
         const response = await getCandies();///candies/best-sellers
-        setBestSellers(response);
+        setProducts(response);
         console.log(response);
         setLoading(false);
       } catch (err) {
@@ -22,7 +22,7 @@ function UseBestSellers() {
     fetchBest();
   }, []);
 
-  return { bestSellers, loading, error };
+  return { products, loading, error };
 }
 
-export default UseBestSellers;
+export default useProducts;

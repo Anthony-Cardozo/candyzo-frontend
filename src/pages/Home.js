@@ -2,21 +2,21 @@ import React from "react";
 import ProductCard from "../components/ProductCard";
 import './home.css'
 import { Link } from 'react-router-dom';
-import UseBestSellers from "../hooks/UseBestSellers";
+import useProducts from "../hooks/useProducts";
 
 export default function Home({isModalOpen}) {
-    const { bestSellers, loading, error } = UseBestSellers();
+    const { products, loading, error } = useProducts();
 
     if (loading) 
         return (
             <div className="loading-body">
-                <p>Loading featured products...</p>
+                <p>Loading products...</p>
             </div>
         );
     if (error) 
         return (
             <div className="error-body">
-                <p>Error loading best sellers: {error.message}...</p>
+                <p>Error loading products: {error.message}...</p>
             </div>
         );
 
@@ -36,10 +36,10 @@ export default function Home({isModalOpen}) {
         <div className="best-sellers">
             <h2>Best Sellers</h2>
             <div className="product-list">
-                    {bestSellers && Array.isArray(bestSellers) && bestSellers.map((bestSeller) => (
-                        <ProductCard product={bestSeller} isModalOpen={isModalOpen}/>
+                    {products && Array.isArray(products) && products.map((prod) => (
+                        <ProductCard product={prod} isModalOpen={isModalOpen}/>
                     ))}
-                    {!bestSellers && !loading && !error && <p>No best sellers found.</p>}
+                    {!products && !loading && !error && <p>No best sellers found.</p>}
             </div>
             <Link to="/shop">
             <button className="btn">View All</button>
