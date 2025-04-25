@@ -15,7 +15,8 @@ import Modal from './components/Modal';
 import { CartContext } from "./context/CartContext";
 import { useContext, useEffect, useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
-
+import CheckoutCancel from "./pages/CheckoutCancel";
+import CheckoutSuccess from "./pages/CheckoutSuccess";
 
 
 function AppContent() {
@@ -54,6 +55,8 @@ function AppContent() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:productId" element={<Product />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/success" element={<CheckoutSuccess />} />
+        <Route path="/checkout/cancel" element={<CheckoutCancel />} />
       </Routes>
       <Footer />
       <Modal isVisible={showModal} onClose={handleCloseModal} />

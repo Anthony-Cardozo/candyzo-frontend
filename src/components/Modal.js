@@ -7,13 +7,19 @@ import useProducts from "../hooks/useProducts";
 import { FaTrashAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { loadStripe} from '@stripe/stripe-js';
 
+const stripePromise = loadStripe('pk_test_51R3jZ02fzFlPItbPjJnmSG0bt4toZT9iojRWYur1UU30OPceSQSTtwZAhJJIcDYpSIoRbg83zeoF5N6ZHX4ntFd700QKyaNnm8');
 
 export default function Modal({isVisible, onClose}) {
   const cart = useContext(CartContext);
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
   const navigate = useNavigate();
   const {products, loading, error} = useProducts();
+
+  //checkout hooks
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState(null);
 
   const handleClickOutside = (e) => {
     const modalContainer = document.querySelector('.modal.show');
@@ -49,6 +55,48 @@ export default function Modal({isVisible, onClose}) {
           </div>
       );
 
+  const handleCheckout = async () => {
+    setCheckoutLoading(true);
+    setCheckoutError(null);
+
+    try {
+      const stripe = await stripePromise;
+
+      const response = await fetch('http://localhost:3001/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: [
+            { price: 'YOUR_STRIPE_PRICE_ID_1', quantity: 2 }, // Example using Price IDs
+            { price: 'YOUR_STRIPE_PRICE_ID_2', quantity: 1 },
+            // ... map your cart items to the required format
+          ],
+        }),
+      });
+
+      const data = await response.json();
+
+      if(data.sessionID) {
+        const result = await stripe.redirectToCheckout({
+          sessionId: data.sessionID,
+        });
+
+      if(result.error)
+        setCheckoutError(result.error.message);
+    }
+      else if(data.error)
+        setCheckoutError(data.error);
+      else
+        setCheckoutError('Failed to create Stripe Checkout session.');
+    } catch(err) {
+      setCheckoutError(err.message);
+    } finally {
+      setCheckoutLoading(false);
+    }
+  };
+
   return (
     <div className={`modal ${isVisible ? 'show' : ''}`}>
       <div className="modal-container">
@@ -78,7 +126,7 @@ export default function Modal({isVisible, onClose}) {
         )}
       </div>
       {productCount > 0 &&(
-        <button className="checkout" onClick={() => {navigate("/checkout"); onClose();}}>Checkout</button>
+        <button className="checkout" onClick={() => handleCheckout}>Checkout</button>
         )}
     </div>
   );
