@@ -16,7 +16,7 @@ export default function ProductCard({ product, isModalOpen }) {
       <img src="chamoy-gummies.png" alt={product.name} width="150"/>
       </Link>
       <h3>{product.name}</h3>
-      <p className="product-details">7-OZ | ${product.price}</p>
+      <p className="product-details">7-OZ | ${product.price_amount}</p>
       <button className="add-to-cart"  disabled={isModalOpen} onClick={() => {cart.addOneToCart(product._id); console.log(cart.items);}}>ADD TO CART</button>
       <Link to={`/product/${product._id}`}>
         <button className="view-more">VIEW MORE</button>

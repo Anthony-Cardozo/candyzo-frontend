@@ -37,7 +37,7 @@ const { products, loading, error } = useProducts();
       <h1>{product.name}</h1>
       <img src={product.image} alt={product.name} />
       <p>{/*product.description*/}Product description should be here</p>
-      <p>Price: ${product.price}</p>
+      <p>Price: ${product.price_amount}</p>
       <button onClick={() => {cart.addOneToCart(product._id); console.log(cart.items);}}>Add to Cart</button>
       
       <div className="reviews">

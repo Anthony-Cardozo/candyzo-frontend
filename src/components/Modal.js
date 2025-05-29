@@ -107,7 +107,7 @@ export default function Modal({isVisible, onClose}) {
         {productCount > 0 ? (
           cart.items.map((cartProduct) => {
             const product = products.find((prod) => prod._id === cartProduct.id);
-            const totalPrice = product.price * cartProduct.quantity;
+            const totalPrice = product.price_amount * cartProduct.quantity;
             return (
               <div key={product._id} className="cart-item">
                 {/*<img src={product.image} alt={product.name} width="50" />*/}
