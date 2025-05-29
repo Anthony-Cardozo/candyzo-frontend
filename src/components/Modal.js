@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './modal.css';
 import { CartContext } from "../context/CartContext";
-import products from "../data/products";
 import useProducts from "../hooks/useProducts";
 import { FaTrashAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
@@ -68,11 +67,14 @@ export default function Modal({isVisible, onClose}) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          items: [
-            { price: 'YOUR_STRIPE_PRICE_ID_1', quantity: 2 }, // Example using Price IDs
-            { price: 'YOUR_STRIPE_PRICE_ID_2', quantity: 1 },
-            // ... map your cart items to the required format
-          ],
+          items: cart.items.map(cartItem => {
+            const product = products.find(p => p._id === cartItem.id);
+            console.log(product);
+            return {
+              price: product.price,
+              quantity: cartItem.quantity
+           };
+          }),
         }),
       });
 
@@ -126,7 +128,7 @@ export default function Modal({isVisible, onClose}) {
         )}
       </div>
       {productCount > 0 &&(
-        <button className="checkout" onClick={() => handleCheckout}>Checkout</button>
+        <button className="checkout" onClick={() => handleCheckout()}>Checkout</button>
         )}
     </div>
   );
