@@ -28,18 +28,29 @@ export default function Modal({isVisible, onClose}) {
   };
 
   useEffect(() => {
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  const isDesktop = window.innerWidth > 768;
+
     if (isVisible) {
       document.addEventListener("mousedown", handleClickOutside);
       document.body.style.overflow = 'hidden';
+      if (isDesktop) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
       document.body.style.overflow = 'auto';
+      document.body.style.paddingRight = '0';
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.body.style.overflow = 'auto';
+      document.body.style.paddingRight = '0';
     };
   }, [isVisible, onClose]);
+
+
 
   if (loading) 
     return (
@@ -100,36 +111,46 @@ export default function Modal({isVisible, onClose}) {
   };
 
   return (
-    <div className={`modal ${isVisible ? 'show' : ''}`}>
-      <div className="modal-container">
-        <IoMdClose color="#555" className="close-btn" onClick={onClose} size="40px"/>
-        <h1>Shopping Cart</h1>
-        {productCount > 0 ? (
-          cart.items.map((cartProduct) => {
-            const product = products.find((prod) => prod._id === cartProduct.id);
-            const totalPrice = product.price_amount * cartProduct.quantity;
-            return (
-              <div key={product._id} className="cart-item">
-                {/*<img src={product.image} alt={product.name} width="50" />*/}
-                <img src="chamoy-gummies.png" alt={product.name} width="50" />
-                <h2 className="product-name">{product.name}</h2>
-                <div className="right">
-                    <button className="plus" onClick={() => cart.addOneToCart(product._id)}>+</button>
-                    <input type="number" className="in" value={cartProduct.quantity}></input>
-                    <button className="minus" onClick={() => cart.removeOneFromCart(product._id)}>-</button>
+    <>
+      {isVisible && <div className="modal-backdrop" onClick={onClose} />}
+      <div className={`modal ${isVisible ? 'show' : ''}`}>
+        <div className="modal-container">
+          <div className="modal-header">
+            <h1 className="modal-title">Cart</h1>
+            <IoMdClose className="modal-close-icon" onClick={onClose} />
+          </div>
+          <hr className="modal-divider" />
+
+          {productCount > 0 ? (
+            cart.items.map((cartProduct) => {
+              const product = products.find((prod) => prod._id === cartProduct.id);
+              const totalPrice = product.price_amount * cartProduct.quantity;
+              return (
+                <div key={product._id} className="cart-item">
+                  <img src="chamoy-gummies.png" alt={product.name} />
+                  <div className="product-info">
+                    <h2 className="product-name">{product.name}</h2>
                     <p className="item-details">${totalPrice.toFixed(0)}</p>
-                    <FaTrashAlt className="trash" color="#a5533f" onClick={() => cart.deleteFromCart(product._id)}/>
+                    <div className="counter-row">
+                      <div className="counter-box">
+                        <button onClick={() => cart.removeOneFromCart(product._id)}>-</button>
+                        <input type="text" value={cartProduct.quantity} readOnly />
+                        <button onClick={() => cart.addOneToCart(product._id)}>+</button>
+                      </div>
+                      <FaTrashAlt className="trash" onClick={() => cart.deleteFromCart(product._id)} />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            );
-          })
-        ) : (
-          <p className="empty">There are no items in your cart.</p>
+              );
+            })
+          ) : (
+            <p className="empty">There are no items in your cart.</p>
+          )}
+        </div>
+        {productCount > 0 && (
+          <button className="checkout" onClick={handleCheckout}>Checkout</button>
         )}
       </div>
-      {productCount > 0 &&(
-        <button className="checkout" onClick={() => handleCheckout()}>Checkout</button>
-        )}
-    </div>
+    </>
   );
 }

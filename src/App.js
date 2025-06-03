@@ -25,13 +25,14 @@ function AppContent() {
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
   const handleCloseModal = () => setShowModal(false);
 
+  /*Bad Logic*//*
   useEffect(() => {
     if (productCount > 0) {
       setShowModal(true);
     } else {
       setShowModal(false);
     }
-  }, [productCount]);
+  }, [productCount]);*/
 
   useEffect(() => {
     if (showModal) {

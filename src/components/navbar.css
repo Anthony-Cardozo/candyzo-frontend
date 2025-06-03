@@ -1,83 +1,161 @@
+/* ========== GENERAL NAVBAR ========== */
 .navbar {
-    background-color: #ede3cc;
-    color: rgb(38, 38, 38);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position:sticky;
-    top:0;
-    left:0;
-    box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    width:100%;
+  background-color: #ede3cc;
+  color: rgb(38, 38, 38);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+/* Hide when scrolling down */
+.navbar-hide {
+  transform: translateY(-100%);
+}
+
+/* Show when scrolling up */
+.navbar-show {
+  transform: translateY(0);
+}
+
+
+.navbar-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ========== LOGO & ICONS ========== */
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.logo-container {
+  flex: 1;
+  text-align: center;
+}
+
+.cart-icon-container {
+  cursor: pointer;
+}
+
+/* ========== MENU FOR DESKTOP ========== */
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #a5533f;
+}
+
+.navbar-logo {
+  max-height: 70px;
+  width: 200px;
+}
+
+/* ========== SLIDE-IN DRAWER ========== */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #fff8e7;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 1100;
+  padding: 20px;
+}
+
+.side-drawer.open {
+  left: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.drawer-menu li {
+  margin-bottom: 15px;
+}
+
+.drawer-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.drawer-menu a:hover {
+  color: #a5533f;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+/* ========== BACKDROP ========== */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1050;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
-  
+}
+
+/* ========== MOBILE ONLY ========== */
+@media (max-width: 768px) {
   .navbar-container {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-icon {
+    display: block;
   }
 
   .menu-left {
-    width: 30%;
-    text-align: left;
+    display: none;
+  }
+
+  .navbar-menu {
+    display: none;
   }
 
   .cart-icon-container {
-    width:30%;
-    text-align: right;
+    position: relative;
   }
-
-  .logo-container {
-    text-align: center; 
-    flex-grow: 1; 
-  }
-  
-  .navbar-logo {
-    font-size: 2rem;
-    color: #a5533f;
-    max-height: 70px; 
-    width: 200px;
-  }
-  
-  .navbar-menu {
-    display: flex;
-    gap: 20px;
-    list-style-type: none;
-  }
-  
-  .navbar-link {
-    text-decoration: none;
-    color: black;
-    font-size: 1.05rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-link:hover {
-    color: #a5533f;
-  }
-  
-  @media (max-width: 768px) {
-    .navbar-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .navbar-menu {
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  .cart-icon {
-    cursor: pointer;
-  }
-  
+}
