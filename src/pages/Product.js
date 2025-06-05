@@ -4,6 +4,7 @@ import './product.css'
 import { CartContext } from '../context/CartContext';
 import { useContext } from 'react';
 import useProducts from '../hooks/useProducts';
+import ProductCard from '../components/ProductCard';
 
 const Product = () => {
 
@@ -26,8 +27,6 @@ const { products, loading, error } = useProducts();
 
   const product = products.find((prod) => prod._id === productId);
   const productQuantity = product ? cart.getProductQuantity(product._id) : 0;
-  console.log("productId from URL:", productId);
-  console.log("products:", products);
 
   if (!product) {
     return <div>Product not found</div>; 
@@ -35,24 +34,25 @@ const { products, loading, error } = useProducts();
   return (
     <div className="product-page">
       <h1>{product.name}</h1>
-      <img src={product.image} alt={product.name} />
-      <p>{/*product.description*/}Product description should be here</p>
-      <p>Price: ${product.price_amount}</p>
-      <button onClick={() => {cart.addOneToCart(product._id); console.log(cart.items);}}>Add to Cart</button>
-      
-      <div className="reviews">
-        <h3>Customer Reviews</h3>
-        <div className="review">
-          <p>Great product! Loved it! 5/5</p>
-        </div>
-        <div className="review">
-          <p>Delicious and chewy! 4/5</p>
-        </div>
+      <div className='product-image'>
+        <img src="/chamoy-gummies.png" alt={product.name} />
       </div>
+      <p>${product.price_amount}</p>
+      <p>{/*product.description*/}Product description should be here</p>
+      <button onClick={() => {cart.addOneToCart(product._id);}}>Add to Cart</button>
 
       <div className="suggestions">
         <h3>You Might Like</h3>
         <div className="product-list">
+          {/*<div className="list">
+                    {Array.isArray(products) && products.length > 0 ? (
+                      products.slice(1,3).map((prod) => (
+                        <ProductCard key={prod._id} product={prod} />
+                      ))
+                    ) : (
+                      <p>No best sellers found.</p>
+                    )}
+          </div>*/}
           <p>product suggestions...</p>
         </div>
       </div>

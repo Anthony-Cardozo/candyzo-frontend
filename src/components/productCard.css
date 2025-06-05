@@ -86,7 +86,7 @@
 @media (max-width: 768px) {
   .card {
   width: 100%;
-  max-width: 300px;
+  max-width: 150px;
   /* Remove fixed padding/margin that might interfere */
   padding: 15px;
   box-sizing: border-box;
@@ -94,7 +94,8 @@
 
 
   .product-image img {
-    height: 150px;
+    height: 50%;
+    margin-bottom: 0px;
   }
 
   .product-name {

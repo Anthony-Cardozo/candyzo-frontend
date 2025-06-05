@@ -24,7 +24,6 @@
 
 
 .navbar-container {
-  max-width: 1200px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -33,8 +32,11 @@
 
 /* ========== LOGO & ICONS ========== */
 .mobile-menu-icon {
-  display: none;
+  display: block;
+  gap:20px;
   cursor: pointer;
+  margin-left: 20px;
+  list-style-type: none;
 }
 
 .logo-container {
@@ -143,8 +145,11 @@
     justify-content: space-between;
   }
 
+
   .mobile-menu-icon {
     display: block;
+    gap:0px;
+    margin-left: 0px;
   }
 
   .menu-left {

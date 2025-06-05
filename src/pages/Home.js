@@ -23,7 +23,7 @@ export default function Home({ isModalOpen }) {
         <h2>Best Sellers</h2>
         <div className="product-list">
           {Array.isArray(products) && products.length > 0 ? (
-            products.map((prod) => (
+            products.slice(0,4).map((prod) => (
               <ProductCard key={prod._id} product={prod} isModalOpen={isModalOpen} />
             ))
           ) : (
@@ -32,7 +32,9 @@ export default function Home({ isModalOpen }) {
         </div>
         <Link to="/shop"><button className="btn">View All</button></Link>
       </div>
-
+      
+      {/*<div className="hero-section2">
+      </div>*/}
       <div className="learn-more">
         <Link to="/about"><button className="learn-more-btn">Learn More</button></Link>
       </div>
