@@ -13,7 +13,7 @@ export default function About() {
       </p>
 
       <div className="about-section">
-        <img src="/about1.jpg" alt="Chamoy Candy" className="about-image" />
+        <img src="chamoy-gummies.png" alt="Chamoy Candy" className="about-image" />
         <p className="about-text">
           Our journey started from a simple kitchen experiment and grew into a
           small business loved by many. We’re proud to bring our family recipe
@@ -27,21 +27,21 @@ export default function About() {
           sweet, spicy, and tangy flavors to create a one-of-a-kind candy
           experience.
         </p>
-        <img src="/about2.jpg" alt="Chamoy Mix" className="about-image" />
+        <img src="chamoy-gummies.png" alt="Chamoy Mix" className="about-image" />
       </div>
 
       <h2 className="team-title">Meet The Team</h2>
       <div className="team-section">
         <div className="team-member">
-          <img src="/anthony.jpg" alt="Anthony" className="team-image" />
+          <img src="chamoy-gummies.png" alt="Anthony" className="team-image" />
           <p>Anthony</p>
         </div>
         <div className="team-member">
-          <img src="/andrew.jpg" alt="Andrew" className="team-image" />
+          <img src="chamoy-gummies.png" alt="Andrew" className="team-image" />
           <p>Andrew</p>
         </div>
         <div className="team-member">
-          <img src="/angela.jpg" alt="Angela" className="team-image" />
+          <img src="chamoy-gummies.png" alt="Angela" className="team-image" />
           <p>Angela</p>
         </div>
       </div>

@@ -25,15 +25,6 @@ function AppContent() {
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
   const handleCloseModal = () => setShowModal(false);
 
-  /*Bad Logic*//*
-  useEffect(() => {
-    if (productCount > 0) {
-      setShowModal(true);
-    } else {
-      setShowModal(false);
-    }
-  }, [productCount]);*/
-
   useEffect(() => {
     if (showModal) {
       document.body.classList.add('modal-open');
@@ -50,11 +41,11 @@ function AppContent() {
       <Bar />
       <NavBar showModal={showModal} onOpenModal={() => setShowModal(true)}/>
       <Routes>
-        <Route path="/" element={<Home isModalOpen={showModal} />} />
-        <Route path="/shop" element={<Shop isModalOpen={showModal}/>} />
+        <Route path="/" element={<Home isModalOpen={showModal} onOpenModal={() => setShowModal(true)}/>} />
+        <Route path="/shop" element={<Shop isModalOpen={showModal} onOpenModal={() => setShowModal(true)}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/product/:productId" element={<Product />} />
+        <Route path="/product/:productId" element={<Product onOpenModal={() => setShowModal(true)}/>} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout/success" element={<CheckoutSuccess />} />
         <Route path="/checkout/cancel" element={<CheckoutCancel />} />

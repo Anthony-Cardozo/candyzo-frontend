@@ -3,7 +3,7 @@ import './productCard.css';
 import { Link } from 'react-router-dom';
 import { CartContext } from "../context/CartContext";
 
-export default function ProductCard({ product, isModalOpen }) {
+export default function ProductCard({ product, isModalOpen, onOpenModal }) {
   const cart = useContext(CartContext);
   const productQuantity = cart.getProductQuantity(product._id);
 
@@ -19,7 +19,7 @@ export default function ProductCard({ product, isModalOpen }) {
       <button
         className="add-to-cart"
         disabled={isModalOpen}
-        onClick={() => cart.addOneToCart(product._id)}
+        onClick={() => {cart.addOneToCart(product._id); onOpenModal(); }}
       >
         ADD TO CART
       </button>

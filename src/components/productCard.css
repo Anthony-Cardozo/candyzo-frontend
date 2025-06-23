@@ -32,6 +32,7 @@
   font-weight: bold;
   color: #333;
   margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .product-details {
@@ -53,6 +54,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 .add-to-cart {

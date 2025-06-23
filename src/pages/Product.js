@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import useProducts from '../hooks/useProducts';
 import ProductCard from '../components/ProductCard';
 
-const Product = () => {
+export default function Product({onOpenModal}){
 
   const cart = useContext(CartContext);
 const { productId } = useParams();
@@ -34,30 +34,19 @@ const { products, loading, error } = useProducts();
   return (
     <div className="product-page">
       <h1>{product.name}</h1>
+
       <div className='product-image'>
         <img src="/chamoy-gummies.png" alt={product.name} />
       </div>
-      <p>${product.price_amount}</p>
-      <p>{/*product.description*/}Product description should be here</p>
-      <button onClick={() => {cart.addOneToCart(product._id);}}>Add to Cart</button>
 
-      <div className="suggestions">
-        <h3>You Might Like</h3>
-        <div className="product-list">
-          {/*<div className="list">
-                    {Array.isArray(products) && products.length > 0 ? (
-                      products.slice(1,3).map((prod) => (
-                        <ProductCard key={prod._id} product={prod} />
-                      ))
-                    ) : (
-                      <p>No best sellers found.</p>
-                    )}
-          </div>*/}
-          <p>product suggestions...</p>
-        </div>
-      </div>
+      <p className="price">${product.price_amount}</p>
+      <p>{product.description}</p>
+
+      <button onClick={() => {cart.addOneToCart(product._id); onOpenModal();}}>
+        ADD TO CART
+      </button>
     </div>
+
   );
 };
 
-export default Product;

@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 import useProducts from "../hooks/useProducts";
 import './shop.css'
 
-export default function Shop({isModalOpen}) {
+export default function Shop({isModalOpen, onOpenModal}) {
 
 const {products, loading, error} = useProducts();
 
@@ -25,7 +25,7 @@ return (
         <h1>Gummy Enchilados</h1>
         <div className="product-list">
             {products.map((product) => (
-                    <ProductCard key={product._id} product={product} isModalOpen={isModalOpen}/>
+                    <ProductCard key={product._id} product={product} isModalOpen={isModalOpen} onOpenModal={onOpenModal}/>
             ))}
         </div>
     </div>

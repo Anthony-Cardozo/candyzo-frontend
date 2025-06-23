@@ -1,4 +1,6 @@
-/* Basic modal styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ========= Global Modal Styles ========= */
 
 .modal-header {
   display: flex;
@@ -12,6 +14,7 @@
   margin: 0;
   font-weight: 600;
   text-align: left;
+  font-family: 'Poppins', sans-serif;
 }
 
 .modal-close-icon {
@@ -32,162 +35,180 @@
   margin-bottom: 16px;
 }
 
-/*ieugfbvyub3yuviy3biufviu34bfv3ifgbv3iivf*/
-
 .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 600px;
-    height: 100%;
-    background-color: white;
-    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    /*padding: 20px;*/
-    transform: translateX(100%); /* Initially off-screen */
-    transition: transform 0.3s ease-out;
-  }
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 425px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+  padding-bottom: 27px;
+}
 
-  .modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-    z-index: 999; /* make sure it's under the modal */
-    opacity: 0;
-    animation: fadeIn 0.3s forwards;
-  }
+.modal.show {
+  transform: translateX(0);
+}
 
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .modal.show {
-    transform: translateX(0); /* Slide in when visible */
-  }
-  
-  .modal-container {
-    overflow-y: auto;
-    max-height: calc(100% - 60px);
-    position: relative;
-  }
-  
-  .cart-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    gap: 10px;
-    align-items: center;
-  }
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
 
-  .right {
-    display: flex;
-    justify-content: space-between;
-    margin-left: auto;
-    align-items: center;
-    width:45%;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
-  
-  .product-name {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .item-details {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .plus,
-  .minus,
-  .remove {
-    background-color: #2a9d8f;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin: 5px;
-    justify-content: right;
-    border-radius: 15px;
-    font-size: 15px;
-  }
-  
-  .plus:hover,
-  .minus:hover,
-  .remove:hover {
-    background-color: #21867a;
-  }
-  
-  .remove {
-    background-color: #a5533f;
-  }
-  
-  .remove:hover {
-    background-color: rgb(138, 64, 45);
-  }
-  
-  .empty {
-    font-size: 16px;
-    color: #777;
-  }
-  
-  /* Checkout button styling */
-  .checkout {
-    background-color: #2a9d8f;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    width: 50%;
-    margin-top: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    justify-content: center;
-    margin-left:25%;
-  }
-  
-  .checkout:hover {
-    background-color: #21867a;
-  }
-  
-  /* Close button styling */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
+}
 
-  
-  .in {
-    width: 50px;
-    height: 30px;
-    text-align: center;
-  }
+.modal-container {
+  overflow-y: auto;
+  max-height: calc(100% - 60px);
+  position: relative;
+  padding: 0 16px;
+}
 
-  .trash {
-    cursor: pointer;
-  }
+/* ========= Cart Items ========= */
 
-  /*.trash:hover{
+.cart-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
 
-  }*/
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
-  @media (max-width: 768px) {
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.item-details {
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+}
+
+/* === Counter + Trash Container === */
+
+.counter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* === Counter Box === */
+
+.counter-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 30px;
+  max-width: fit-content;
+}
+
+.counter-box button {
+  background: none;
+  border: none;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  height: 100%;
+}
+
+.counter-box input {
+  width: 30px;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* === Trash Icon === */
+
+.trash {
+  font-size: 20px;
+  color: #a5533f;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.trash:hover {
+  color: rgb(138, 64, 45);
+}
+
+.empty {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ========= Checkout Button ========= */
+
+.checkout {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto 0;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.checkout:hover {
+  background-color: #21867a;
+}
+
+/* ========= Mobile Styles ========= */
+
+@media (max-width: 768px) {
   .modal {
-    width: 84vw; /* 5/6 width */
+    width: 84vw;
     padding: 0px;
+    padding-bottom: 30px;
   }
 
   .cart-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     margin-bottom: 16px;
     padding-left: 10px;
@@ -221,47 +242,30 @@
 
   .counter-row {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 8px;
+    margin-top: 8px;
   }
 
   .counter-box {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    overflow: hidden;
     height: 28px;
-    max-width: fit-content;
   }
 
   .counter-box button {
-    background: none;
-    border: none;
     padding: 0 8px;
     font-size: 16px;
-    color: #333;
-    cursor: pointer;
-    height: 100%;
   }
 
   .counter-box input {
     width: 28px;
-    border: none;
-    text-align: center;
     font-size: 14px;
-    pointer-events: none;
-    background: transparent;
   }
 
   .trash {
     font-size: 18px;
     color: #a5533f;
     cursor: pointer;
-  }
-
-  .right {
-    display: none;
   }
 
   .checkout {

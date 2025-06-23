@@ -4,7 +4,7 @@ import './home.css';
 import { Link } from 'react-router-dom';
 import useProducts from "../hooks/useProducts";
 
-export default function Home({ isModalOpen }) {
+export default function Home({ isModalOpen, onOpenModal }) {
   const { products, loading, error } = useProducts();
 
   if (loading) return <div className="loading-body"><p>Loading products...</p></div>;
@@ -14,7 +14,7 @@ export default function Home({ isModalOpen }) {
     <div className="body">
       <div className="hero-section">
         <div className="hero-text">
-          <p>Your favorite enchilados, made with love and care.</p>
+          <p>Your Favorite Candy, Drenched in Chamoy & Love.</p>
           <Link to="/shop"><button className="btn">Shop Now!</button></Link>
         </div>
       </div>
@@ -24,7 +24,7 @@ export default function Home({ isModalOpen }) {
         <div className="product-list">
           {Array.isArray(products) && products.length > 0 ? (
             products.slice(0,4).map((prod) => (
-              <ProductCard key={prod._id} product={prod} isModalOpen={isModalOpen} />
+              <ProductCard key={prod._id} product={prod} isModalOpen={isModalOpen} onOpenModal={onOpenModal}/>
             ))
           ) : (
             <p>No best sellers found.</p>
