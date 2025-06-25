@@ -72,7 +72,7 @@ export default function Modal({isVisible, onClose}) {
     try {
       const stripe = await stripePromise;
 
-      const response = await fetch('http://localhost:3001/create-checkout-session', {
+      const response = await fetch('https://candyzo-backend.onrender.com/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
