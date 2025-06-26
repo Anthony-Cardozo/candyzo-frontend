@@ -66,6 +66,7 @@ export default function Modal({isVisible, onClose}) {
       );
 
   const handleCheckout = async () => {
+    console.log("Checkout clicked");
     setCheckoutLoading(true);
     setCheckoutError(null);
 
