@@ -73,6 +73,15 @@ export default function Modal({isVisible, onClose}) {
     try {
       const stripe = await stripePromise;
 
+      console.log("🛒 Sending items:", cart.items.map(cartItem => {
+        const product = products.find(p => p._id === cartItem.id);
+        return {
+          name: product.name,
+          stripe_price_id: product.stripe_price_id, // if you added it
+          quantity: cartItem.quantity
+        };
+      }));
+
       const response = await fetch('https://candyzo-backend.onrender.com/create-checkout-session', {
         method: 'POST',
         headers: {
@@ -89,6 +98,16 @@ export default function Modal({isVisible, onClose}) {
           }),
         }),
       });
+
+      console.log("🛒 Sending items:", cart.items.map(cartItem => {
+        const product = products.find(p => p._id === cartItem.id);
+        return {
+          name: product.name,
+          stripe_price_id: product.stripe_price_id, // if you added it
+          quantity: cartItem.quantity
+        };
+      }));
+
 
       const data = await response.json();
 
@@ -109,6 +128,10 @@ export default function Modal({isVisible, onClose}) {
     } finally {
       setCheckoutLoading(false);
     }
+
+    console.log("🌐 Response status:", response.status);
+    console.log("📨 Response data:", data);
+
   };
 
   return (
