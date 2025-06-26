@@ -76,8 +76,7 @@ export default function Modal({isVisible, onClose}) {
       console.log("🛒 Sending items:", cart.items.map(cartItem => {
         const product = products.find(p => p._id === cartItem.id);
         return {
-          name: product.name,
-          stripe_price_id: product.stripe_price_id, // if you added it
+          price: product.price,
           quantity: cartItem.quantity
         };
       }));
@@ -102,8 +101,7 @@ export default function Modal({isVisible, onClose}) {
       console.log("🛒 Sending items:", cart.items.map(cartItem => {
         const product = products.find(p => p._id === cartItem.id);
         return {
-          name: product.name,
-          stripe_price_id: product.stripe_price_id, // if you added it
+          price: product.price,
           quantity: cartItem.quantity
         };
       }));
