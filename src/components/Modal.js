@@ -127,9 +127,6 @@ export default function Modal({isVisible, onClose}) {
       setCheckoutLoading(false);
     }
 
-    console.log("🌐 Response status:", response.status);
-    console.log("📨 Response data:", data);
-
   };
 
   return (
