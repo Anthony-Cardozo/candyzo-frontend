@@ -149,7 +149,7 @@ export default function Modal({isVisible, onClose}) {
                   <img src="chamoy-gummies.png" alt={product.name} />
                   <div className="product-info">
                     <h2 className="product-name">{product.name}</h2>
-                    <p className="item-details">${totalPrice.toFixed(0)}</p>
+                    <p className="item-details">${totalPrice}</p>
                     <div className="counter-row">
                       <div className="counter-box">
                         <button onClick={() => cart.removeOneFromCart(product._id)}>-</button>
