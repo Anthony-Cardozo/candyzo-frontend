@@ -8,7 +8,7 @@ import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { loadStripe} from '@stripe/stripe-js';
 
-const stripePromise = loadStripe('pk_test_51R3jZ02fzFlPItbPjJnmSG0bt4toZT9iojRWYur1UU30OPceSQSTtwZAhJJIcDYpSIoRbg83zeoF5N6ZHX4ntFd700QKyaNnm8');
+const stripePromise = loadStripe('pk_live_51R3jYnK9J2aQKpCkUKgyeGshCeFhEPDD2rYGZDB2ohKntmAENaKPozHuYIi7EnHLdN813339M2PaE5ZiSCE70Cvz00eadGqauT');
 
 export default function Modal({isVisible, onClose}) {
   const cart = useContext(CartContext);
