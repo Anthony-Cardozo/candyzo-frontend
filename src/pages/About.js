@@ -49,16 +49,20 @@ export default function About() {
       <h2 className="faq-title">FAQs</h2>
       <div className="faq">
         <details>
-          <summary>What makes your candy special?</summary>
-          <p>Our homemade chamoy and powder blend gives each piece a unique flavor.</p>
-        </details>
-        <details>
-          <summary>Do you offer delivery?</summary>
-          <p>Yes! We offer local delivery and are working on shipping options.</p>
-        </details>
-        <details>
           <summary>Where are you based?</summary>
           <p>We're based in Dallas, TX and operate as a family-run business.</p>
+        </details>
+        <details>
+          <summary>How should I store the candy?</summary>
+          <p>Keep them in a cool, dry place away from sunlight. For best taste, eat within 2–3 weeks of delivery.</p>
+        </details>
+        <details>
+          <summary>Can I order in bulk for events or resale?</summary>
+          <p>Yes! Reach out to us for custom or bulk orders — we’d love to be part of your event or business.</p>
+        </details>
+        <details>
+          <summary>Do you take custom requests (flavors, levels of spice, etc.)?</summary>
+          <p>We’re open to special requests — just leave a note at checkout or message us!</p>
         </details>
       </div>
     </div>
