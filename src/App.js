@@ -48,6 +48,7 @@ function AppContent() {
         <Route path="/product/:productId" element={<Product onOpenModal={() => setShowModal(true)}/>} />
         <Route path="/success" element={<CheckoutSuccess />} />
         <Route path="/cancel" element={<CheckoutCancel />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <Modal isVisible={showModal} onClose={handleCloseModal} />
