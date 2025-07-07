@@ -17,6 +17,7 @@ import { useContext, useEffect, useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 import CheckoutCancel from "./pages/CheckoutCancel";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
+import NotFound from "./pages/NotFound";
 
 
 function AppContent() {

@@ -53,16 +53,10 @@ export default function Modal({isVisible, onClose}) {
 
 
   if (loading) 
-    return (
-        <div className="loading-body">
-            <p>Loading products...</p>
-        </div>
-    );
+    return (<></>);
   if (error) 
       return (
-          <div className="error-body">
-              <p>Error loading products: {error.message}...</p>
-          </div>
+          <></>
       );
 
   const handleCheckout = async () => {
