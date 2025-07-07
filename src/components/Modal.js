@@ -51,13 +51,13 @@ export default function Modal({isVisible, onClose}) {
   }, [isVisible, onClose]);
 
 
-
+/*
   if (loading) 
     return (
         <div className="loading-body">
             <p>Loading products...</p>
         </div>
-    );
+    );*/
   if (error) 
       return (
           <div className="error-body">
