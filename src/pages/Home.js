@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 import './home.css';
 import { Link } from 'react-router-dom';
 import useProducts from "../hooks/useProducts";
-import './loading.css';
+/*import './loading.css';*/
 
 export default function Home({ isModalOpen, onOpenModal }) {
   const { products, loading, error } = useProducts();
