@@ -24,7 +24,7 @@
 
 .hero-section2 {
   position: relative;
-  background-image: url('../../public/Gusher.jpg');
+  background-image: url('../../public/WatermelonHome.jpg');
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
+  padding: 100px 100px;
 }
 
 .hero-text {
