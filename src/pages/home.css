@@ -28,14 +28,16 @@
   background-size: cover;
   background-position: center;
   height: 500px;
-  width: 75%;
+  width: 66%;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 150px;
-  padding-bottom: 100px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  margin-left: 25%;
+  border-radius: 20px;
 }
 
 .hero-text {
