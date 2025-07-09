@@ -6,7 +6,9 @@
   padding: 2rem;
   font-size: 1.2rem;
   color: #333;
-  height:800px;
+  height:85%;
+  width:100%;
+  background-color: #ede3cc;
 }
 
 .spinner {
