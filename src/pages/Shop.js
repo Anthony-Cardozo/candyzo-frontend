@@ -7,18 +7,8 @@ export default function Shop({isModalOpen, onOpenModal}) {
 
 const {products, loading, error} = useProducts();
 
-if (loading) 
-    return (
-        <div className="loading-body">
-            <p>Loading products...</p>
-        </div>
-    );
-if (error) 
-    return (
-        <div className="error-body">
-            <p>Error loading products: {error.message}...</p>
-        </div>
-    );
+if (loading) return <div className="loading-body"><div className="spinner"></div><p>Loading products...</p></div>;
+if (error) return <div className="error-body"><div className="spinner"></div><p>Error loading products: {error.message}</p></div>;
 
 return (
     <div className="body">
