@@ -24,20 +24,16 @@
 
 .hero-section2 {
   position: relative;
+  background-image: url('../../public/Gusher.jpg');
   background-size: cover;
   background-position: center;
-  /*background-image: url('../../public/WatermelonHome.jpg');*/
-  height: 400px;
-  width: 750px;
+  height: 500px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 50px;
-  margin-left: 25%;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  padding: 0 20px;
 }
 
 .hero-text {
@@ -103,26 +99,28 @@
 
 
 /* Learn More Section */
+
 .learn-more {
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-  margin-top: 50%;
-  border-radius: 2px;
-  border-radius: 15px;
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+.learn-more p {
+  margin-top: 10px;
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter;
 }
 
 .learn-more-btn {
   padding: 10px 20px;
   font-size: 1.1rem;
-  background-color: #bb7135;
-  color: white;
+  background-color: white;
+  color: #814b3f;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  margin-top: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;

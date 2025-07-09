@@ -34,10 +34,11 @@ export default function Home({ isModalOpen, onOpenModal }) {
         <Link to="/shop"><button className="btn">View All</button></Link>
       </div>
       
-      {/*<div className="hero-section2">
-      </div>*/}
-      <div className="learn-more">
-        <Link to="/about"><button className="learn-more-btn">Learn More</button></Link>
+      <div className="hero-section2">
+        <div className="learn-more">
+          <p>What's backstage?</p>
+          <Link to="/about"><button className="learn-more-btn">Learn More</button></Link>
+        </div>
       </div>
     </div>
   );
