@@ -8,7 +8,7 @@ import './loading.css';
 export default function Home({ isModalOpen, onOpenModal }) {
   const { products, loading, error } = useProducts();
 
-  if (loading) return <div className="loading-body"><div className="spinner"></div><p>Loading products...</p></div>;
+  if (true) return <div className="loading-body"><div className="spinner"></div><p>Loading products...</p></div>;
   if (error) return <div className="error-body"><div className="spinner"></div><p>Error loading products: {error.message}</p></div>;
 
   return (
