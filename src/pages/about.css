@@ -9,6 +9,12 @@
 .about-hero {
   text-align: center;
   margin-bottom: 40px;
+  padding: 100px 20px;
+  background-image: url('/wmsph.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-radius: 20px;
 }
 
 .about-title {
