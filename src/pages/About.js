@@ -23,7 +23,7 @@ export default function About() {
         <p className="about-text">
           Every batch is handcrafted in small quantities to ensure freshness. Our candy is drenched in a secret chamoy and spice blend that hits the perfect balance of sweet, tangy, and spicy. Whether it's your first time or your fiftieth — it always hits.
         </p>
-        <img src="chamoy-gummies.png" alt="Chamoy Mix" className="about-image" />
+        <img src="wormabout.jpeg" alt="Chamoy Mix" className="about-image" />
       </div>
 
       <h2 className="faq-title">FAQs</h2>

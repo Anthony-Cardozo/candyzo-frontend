@@ -23,8 +23,8 @@
 }
 
 .hero-section2 {
-  /*
   position: relative;
+  background-image: url('../../public/learnmorehero.jpeg');
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -37,15 +37,6 @@
   margin-top: 100px;
   margin-bottom: 100px;
   margin-left: 0 auto;
-  border-radius: 20px;*/
-
-  text-align: center;
-  margin-bottom: 60px;
-  padding: 100px 20px;
-  background-image: url('../../public/Gusher.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
   border-radius: 20px;
 }
 
