@@ -4,46 +4,26 @@ import "./about.css";
 export default function About() {
   return (
     <div className="about-container">
-      <h1 className="about-title">About</h1>
+      <div className="about-hero">
+        <h1 className="about-title">Made with Flavor. Shared with Love.</h1>
+        <p className="about-subtitle">From our family recipe to your doorstep.</p>
+      </div>
 
-      <p className="about-summary">
-        Cardozo Enchilados was founded in 2023 and we sell candy covered in our
-        secret chamoy and powder mix, blending tradition with flavor to create
-        something unforgettable.
-      </p>
-
+      <h2 className="section-title">Our Story</h2>
       <div className="about-section">
         <img src="chamoy-gummies.png" alt="Chamoy Candy" className="about-image" />
         <p className="about-text">
-          Our journey started from a simple kitchen experiment and grew into a
-          small business loved by many. We’re proud to bring our family recipe
-          to more people every day.
+          Cardozo Enchilados began in 2023 with a craving — not just for candy, but for connection. What started as a kitchen experiment soon became a hit with friends and family, and we knew we had something special. 
+          We mix tradition, love, and our own signature chamoy to create a candy experience like no other.
         </p>
       </div>
 
+      <h2 className="section-title">What Makes Us Different</h2>
       <div className="about-section reverse">
         <p className="about-text">
-          Every batch is made with care and passion. Our signature mix balances
-          sweet, spicy, and tangy flavors to create a one-of-a-kind candy
-          experience.
+          Every batch is handcrafted in small quantities to ensure freshness. Our candy is drenched in a secret chamoy and spice blend that hits the perfect balance of sweet, tangy, and spicy. Whether it's your first time or your fiftieth — it always hits.
         </p>
         <img src="chamoy-gummies.png" alt="Chamoy Mix" className="about-image" />
-      </div>
-
-      <h2 className="team-title">Meet The Team</h2>
-      <div className="team-section">
-        <div className="team-member">
-          <img src="chamoy-gummies.png" alt="Anthony" className="team-image" />
-          <p>Anthony</p>
-        </div>
-        <div className="team-member">
-          <img src="chamoy-gummies.png" alt="Andrew" className="team-image" />
-          <p>Andrew</p>
-        </div>
-        <div className="team-member">
-          <img src="chamoy-gummies.png" alt="Angela" className="team-image" />
-          <p>Angela</p>
-        </div>
       </div>
 
       <h2 className="faq-title">FAQs</h2>

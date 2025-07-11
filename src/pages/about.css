@@ -6,18 +6,28 @@
   color: #333;
 }
 
+.about-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .about-title {
   font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
 }
 
-.about-summary {
+.about-subtitle {
   font-size: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
+  color: #555;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  margin: 40px 0 20px;
   text-align: center;
-  margin-bottom: 40px;
-  line-height: 1.6;
 }
 
 .about-section {
@@ -46,38 +56,11 @@
   line-height: 1.6;
 }
 
-.team-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
-.team-section {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 60px;
-}
-
-.team-member {
-  text-align: center;
-}
-
-.team-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border: 3px solid #ccc;
-}
-
 .faq-title {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .faq details {
@@ -91,11 +74,13 @@
 
 .faq summary {
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .faq p {
   margin-top: 10px;
   font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Responsive */
@@ -115,9 +100,5 @@
 
   .about-text {
     text-align: center;
-  }
-
-  .team-section {
-    flex-direction: column;
   }
 }
