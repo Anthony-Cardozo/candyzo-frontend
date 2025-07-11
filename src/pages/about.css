@@ -8,7 +8,7 @@
 
 .about-hero {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   padding: 100px 20px;
   background-image: url('../../public/wmsph.jpeg');
   background-size: cover;
@@ -20,7 +20,7 @@
 .about-title {
   font-size: 2.5rem;
   font-family: 'Poppins', sans-serif;
-  color: #adeae2
+  color: white
 }
 
 .about-subtitle {
