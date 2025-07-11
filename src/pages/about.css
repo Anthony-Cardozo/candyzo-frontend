@@ -10,7 +10,7 @@
   text-align: center;
   margin-bottom: 40px;
   padding: 100px 20px;
-  background-image: url('/wmsph.jpeg');
+  background-image: url('../../public/wmsph.jpeg');
   background-size: cover;
   background-position: center;
   color: white;
