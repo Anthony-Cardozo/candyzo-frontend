@@ -11,7 +11,7 @@ export default function About() {
 
       <h2 className="section-title">Our Story</h2>
       <div className="about-section">
-        <img src="chamoy-gummies.png" alt="Chamoy Candy" className="about-image" />
+        <img src="fundraiser.jpeg" alt="Chamoy Candy" className="about-image" />
         <p className="about-text">
           Cardozo Enchilados began in 2023 with a craving — not just for candy, but for connection. What started as a kitchen experiment soon became a hit with friends and family, and we knew we had something special. 
           We mix tradition, love, and our own signature chamoy to create a candy experience like no other.
