@@ -9,6 +9,9 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card:hover {
@@ -16,27 +19,28 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Product Image Container */
+/* Image Wrapper — forces square shape */
 .product-image {
-  width: 100%;
-  padding-top: 100%; /* Creates a 1:1 aspect ratio */
   position: relative;
-  margin-bottom: 15px;
-  border-radius: 10px;
+  width: 100%;
+  padding-top: 100%; /* 1:1 aspect ratio */
+  border-radius: 12px;
   overflow: hidden;
+  margin-bottom: 15px;
 }
 
-/* Image Inside Container */
+/* Actual image */
 .product-image img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
   object-fit: cover;
+  border-radius: 12px;
 }
 
-/* Text Styling */
+/* Text */
 .product-name {
   font-size: 1.1rem;
   font-weight: bold;
@@ -86,7 +90,7 @@
   background-color: rgb(138, 64, 45);
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 768px) {
   .card {
     max-width: 180px;
