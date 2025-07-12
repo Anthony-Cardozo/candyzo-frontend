@@ -140,7 +140,7 @@ export default function Modal({isVisible, onClose}) {
               const totalPrice = product.price_amount * cartProduct.quantity;
               return (
                 <div key={product._id} className="cart-item">
-                  <img src="chamoy-gummies.png" alt={product.name} />
+                  <img src={`/product-images/${product._id}.jpeg`} alt={product.name} />
                   <div className="product-info">
                     <h2 className="product-name">{product.name}</h2>
                     <p className="item-details">${totalPrice}</p>

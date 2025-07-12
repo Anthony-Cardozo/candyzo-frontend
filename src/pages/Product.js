@@ -35,9 +35,12 @@ const { products, loading, error } = useProducts();
     <div className="product-page">
       <h1>{product.name}</h1>
 
-      <div className='product-image'>
-        <img src="/chamoy-gummies.png" alt={product.name} />
+      <div className="product-image">
+        <div className="image-wrapper">
+          <img src={`/product-images/${product._id}.jpeg`} alt={product.name} />
+        </div>
       </div>
+
 
       <p className="price">${product.price_amount}</p>
       <p>{product.description}</p>

@@ -200,13 +200,27 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.product-image img {
-  width: 80%;
-  max-width: 250px;
-  height: auto;
+.product-image {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1; /* ✅ ensures a square */
   margin: 0 auto 20px;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image .image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ crops the image perfectly */
+  border-radius: 10px;
+  display: block;
 }
 
 .product-page .price {
@@ -256,5 +270,11 @@
 
   .product-page p {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    max-width: 250px;
   }
 }
