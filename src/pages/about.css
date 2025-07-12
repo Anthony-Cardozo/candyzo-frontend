@@ -15,6 +15,7 @@
   background-position: center;
   color: white;
   border-radius: 20px;
+  max-height: 370px;
 }
 
 .about-title {
@@ -52,6 +53,7 @@
   height: 100%;
   max-height: 300px;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 .about-text {
