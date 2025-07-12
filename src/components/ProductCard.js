@@ -16,16 +16,19 @@ export default function ProductCard({ product, isModalOpen, onOpenModal }) {
       </Link>
       <h3 className="product-name">{product.name}</h3>
       <p className="product-details">7-OZ | ${product.price_amount}</p>
-      <button
-        className="add-to-cart"
-        disabled={isModalOpen}
-        onClick={() => {cart.addOneToCart(product._id); onOpenModal(); }}
-      >
-        ADD TO CART
-      </button>
-      <Link to={`/product/${product._id}`}>
-        <button className="view-more">VIEW MORE</button>
-      </Link>
+      <div className="card-buttons">
+        <button
+          className="add-to-cart"
+          disabled={isModalOpen}
+          onClick={() => {cart.addOneToCart(product._id); onOpenModal(); }}
+        >
+          ADD TO CART
+        </button>
+
+        <Link to={`/product/${product._id}`} className="view-more-link">
+          <button className="view-more">VIEW MORE</button>
+        </Link>
+      </div>
     </div>
   );
 }
