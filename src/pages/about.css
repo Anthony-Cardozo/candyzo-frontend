@@ -46,15 +46,11 @@
   flex-wrap: wrap;
 }
 
-.about-section.reverse {
-  flex-direction: row-reverse;
-}
-
 .about-image {
   width: 100%;
   max-width: 400px;
   height: 100%;
-  max-height: 400px;
+  max-height: 300px;
   border-radius: 12px;
 }
 
