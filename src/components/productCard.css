@@ -1,4 +1,3 @@
-/*productCard.css*/
 .card {
   background-color: #fff;
   width: 100%;
@@ -17,16 +16,27 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Product Image */
-.product-image img {
+/* Product Image Container */
+.product-image {
   width: 100%;
-  max-width: 200px;
-  height: 220px;
-  object-fit: contain;
-  border-radius: 10px;
+  padding-top: 100%; /* Creates a 1:1 aspect ratio */
+  position: relative;
   margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
+/* Image Inside Container */
+.product-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text Styling */
 .product-name {
   font-size: 1.1rem;
   font-weight: bold;
@@ -43,6 +53,7 @@
   margin-top: 25px;
 }
 
+/* Buttons */
 .add-to-cart,
 .view-more {
   width: 100%;
@@ -75,29 +86,11 @@
   background-color: rgb(138, 64, 45);
 }
 
-/* Fix parent container spacing *//*
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  padding: 20px;
-}*/
-
 /* Responsive Styles */
 @media (max-width: 768px) {
   .card {
-  width: 100%;
-  max-width: 150px;
-  /* Remove fixed padding/margin that might interfere */
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-
-  .product-image img {
-    height: 50%;
-    margin-bottom: 0px;
+    max-width: 180px;
+    padding: 15px;
   }
 
   .product-name {
@@ -119,10 +112,6 @@
 @media (max-width: 450px) {
   .card {
     max-width: 90%;
-  }
-
-  .product-image img {
-    height: 120px;
   }
 
   .add-to-cart,
