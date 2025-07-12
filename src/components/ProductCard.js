@@ -11,7 +11,7 @@ export default function ProductCard({ product, isModalOpen, onOpenModal }) {
     <div className="card">
       <Link to={`/product/${product._id}`}>
         <div className="product-image">
-          <img src="chamoy-gummies.png" alt={product.name} />
+          <img src="three.jpeg" alt={product.name} />
         </div>
       </Link>
       <h3 className="product-name">{product.name}</h3>
