@@ -27,16 +27,21 @@
   background-image: url('../../public/learnmorehero.jpeg');
   background-size: cover;
   background-position: center;
-  height: 500px;
+  background-repeat: no-repeat;
+  aspect-ratio: 16 / 9;
+  width: 90%;
   max-width: 1000px;
+  margin: 75px auto;
+  border-radius: 20px;
+
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 75 auto;
-  border-radius: 20px;
+  padding: 20px;
 }
+
 
 .hero-text {
   font-size: 4.5rem;
@@ -203,5 +208,13 @@
 @media (max-width: 450px) {
   .product-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section2 {
+    aspect-ratio: auto;
+    height: 300px;
+    padding: 15px;
   }
 }
