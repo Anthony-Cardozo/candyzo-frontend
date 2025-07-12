@@ -53,6 +53,11 @@
   margin-top: 25px;
 }
 
+.card-buttons {
+  width: 100%;
+}
+
+
 /* Buttons */
 .add-to-cart,
 .view-more {
@@ -73,6 +78,7 @@
 .view-more-link {
   width: 100%;
   display: block;
+  text-decoration: none;
 }
 
 
