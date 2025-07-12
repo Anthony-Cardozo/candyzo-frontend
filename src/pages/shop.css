@@ -8,7 +8,7 @@ h1 {
 .product-list {
     display: flex;
     flex-wrap:wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
 }
 
